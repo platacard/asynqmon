@@ -25,7 +25,7 @@ RUN yarn install && yarn build
 # Building a backend.
 #
 
-FROM --platform=$BUILDPLATFORM golang:1.23.1-alpine AS backend
+FROM --platform=$BUILDPLATFORM golang:1.25-alpine AS backend
 
 ARG TARGETOS
 ARG TARGETARCH
