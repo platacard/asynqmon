@@ -3,7 +3,7 @@
 # Building a frontend.
 #
 
-FROM alpine:3.18 AS frontend
+FROM alpine:3.24.1 AS frontend
 
 # Move to a working directory (/static).
 WORKDIR /static
@@ -25,7 +25,7 @@ RUN yarn install && yarn build
 # Building a backend.
 #
 
-FROM --platform=$BUILDPLATFORM golang:1.25-alpine AS backend
+FROM --platform=$BUILDPLATFORM golang:1.26.5-alpine3.24 AS backend
 
 ARG TARGETOS
 ARG TARGETARCH
